@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2008/03/23 15:09:21 simon Exp $
+# $OpenBSD: Makefile,v 1.6 2008/03/25 23:41:50 matthieu Exp $
 
 .include <bsd.xconf.mk>
 
 PROG=		cwm
 
-SRCS=		calmwm.c screen.c xmalloc.c client.c grab.c search.c \
-		util.c xutil.c conf.c input.c xevents.c group.c \
+SRCS=		calmwm.c screen.c xmalloc.c client.c grab.c menu.c \
+		search.c util.c xutil.c conf.c input.c xevents.c group.c \
 		kbfunc.c font.c parse.y
 
 CPPFLAGS+=	-I${X11BASE}/include -I${X11BASE}/include/freetype2 -I${.CURDIR}
