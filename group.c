@@ -179,19 +179,19 @@ group_init(struct screen_ctx *sc)
 }
 
 void
-group_make_autogroup(struct conf *conf, char *class, int no)
+group_make_autogroup(struct conf *conf, char *val, int no)
 {
 	struct autogroupwin	*aw;
 	char			*p;
 
 	aw = xcalloc(1, sizeof(*aw));
 
-	if ((p = strchr(class, ',')) == NULL) {
+	if ((p = strchr(val, ',')) == NULL) {
 		aw->name = NULL;
-		aw->class = xstrdup(class);
+		aw->class = xstrdup(val);
 	} else {
 		*(p++) = '\0';
-		aw->name = xstrdup(class);
+		aw->name = xstrdup(val);
 		aw->class = xstrdup(p);
 	}
 	aw->num = no;
