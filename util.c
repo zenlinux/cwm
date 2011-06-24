@@ -15,7 +15,7 @@
  * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  *
- * $OpenBSD: util.c,v 1.12 2009/12/15 04:10:42 okan Exp $
+ * $OpenBSD: util.c,v 1.13 2011/05/11 13:53:51 okan Exp $
  */
 
 #include <sys/param.h>
@@ -32,7 +32,7 @@
 
 #define MAXARGLEN 20
 
-int
+void
 u_spawn(char *argstr)
 {
 	switch (fork()) {
@@ -42,12 +42,9 @@ u_spawn(char *argstr)
 		break;
 	case -1:
 		warn("fork");
-		return (-1);
 	default:
 		break;
 	}
-
-	return (0);
 }
 
 void
