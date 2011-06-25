@@ -15,7 +15,7 @@
  * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  *
- * $OpenBSD: conf.c,v 1.84 2011/06/24 06:06:24 okan Exp $
+ * $OpenBSD: conf.c,v 1.85 2011/06/24 06:09:26 okan Exp $
  */
 
 #include <sys/param.h>
@@ -283,7 +283,8 @@ conf_setup(struct conf *c, const char *conf_file)
 
 	conf_init(c);
 
-	(void)parse_config(c->conf_path, c);
+	if (parse_config(c->conf_path, c) == -1)
+		warnx("config file %s has errors, not loading", c->conf_path);
 }
 
 void
