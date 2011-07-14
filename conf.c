@@ -15,7 +15,7 @@
  * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  *
- * $OpenBSD: conf.c,v 1.85 2011/06/24 06:09:26 okan Exp $
+ * $OpenBSD: conf.c,v 1.86 2011/06/25 13:37:05 okan Exp $
  */
 
 #include <sys/param.h>
@@ -202,7 +202,7 @@ conf_init(struct conf *c)
 	strlcpy(c->termpath, "xterm", sizeof(c->termpath));
 	strlcpy(c->lockpath, "xlock", sizeof(c->lockpath));
 
-	c->color[CWM_COLOR_BORDOR_ACTIVE].name =
+	c->color[CWM_COLOR_BORDER_ACTIVE].name =
 	    xstrdup(CONF_COLOR_ACTIVEBORDER);
 	c->color[CWM_COLOR_BORDER_INACTIVE].name =
 	    xstrdup(CONF_COLOR_INACTIVEBORDER);

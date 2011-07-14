@@ -1,4 +1,4 @@
-/*	$OpenBSD: parse.y,v 1.26 2010/09/25 20:02:58 okan Exp $ */
+/*	$OpenBSD: parse.y,v 1.27 2011/06/24 06:06:24 okan Exp $ */
 
 /*
  * Copyright (c) 2002, 2003, 2004 Henning Brauer <henning@openbsd.org>
@@ -169,8 +169,8 @@ color		: COLOR colors
 		;
 
 colors		: ACTIVEBORDER STRING {
-			free(conf->color[CWM_COLOR_BORDOR_ACTIVE].name);
-			conf->color[CWM_COLOR_BORDOR_ACTIVE].name = $2;
+			free(conf->color[CWM_COLOR_BORDER_ACTIVE].name);
+			conf->color[CWM_COLOR_BORDER_ACTIVE].name = $2;
 		}
 		| INACTIVEBORDER STRING {
 			free(conf->color[CWM_COLOR_BORDER_INACTIVE].name);
