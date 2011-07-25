@@ -15,7 +15,7 @@
  * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  *
- * $OpenBSD: xutil.c,v 1.35 2011/05/11 13:53:51 okan Exp $
+ * $OpenBSD: xutil.c,v 1.36 2011/07/23 13:09:11 okan Exp $
  */
 
 #include <sys/param.h>
@@ -142,7 +142,7 @@ xu_sendmsg(Window win, Atom atm, long val)
 {
 	XEvent	 e;
 
-	memset(&e, 0, sizeof(e));
+	(void)memset(&e, 0, sizeof(e));
 	e.xclient.type = ClientMessage;
 	e.xclient.window = win;
 	e.xclient.message_type = atm;
