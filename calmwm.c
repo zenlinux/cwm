@@ -15,7 +15,7 @@
  * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  *
- * $OpenBSD: calmwm.c,v 1.57 2011/07/23 13:09:11 okan Exp $
+ * $OpenBSD: calmwm.c,v 1.58 2011/07/25 15:10:24 okan Exp $
  */
 
 #include <sys/param.h>
@@ -169,7 +169,6 @@ x_setupscreen(struct screen_ctx *sc, u_int which)
 	conf_color(&Conf, sc);
 
 	group_init(sc);
-	font_init(sc);
 	conf_font(&Conf, sc);
 
 	TAILQ_INIT(&sc->mruq);
