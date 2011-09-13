@@ -15,7 +15,7 @@
  * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  *
- * $OpenBSD: xevents.c,v 1.54 2011/06/24 05:33:41 okan Exp $
+ * $OpenBSD: xevents.c,v 1.55 2011/08/22 16:34:34 oga Exp $
  */
 
 /*
@@ -190,6 +190,9 @@ xev_handle_propertynotify(XEvent *ee)
 			break;
 		case XA_WM_NAME:
 			client_setname(cc);
+			break;
+		case XA_WM_TRANSIENT_FOR:
+			client_transient(cc);
 			break;
 		default:
 			/* do nothing */
