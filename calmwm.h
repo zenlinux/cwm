@@ -15,12 +15,13 @@
  * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  *
- * $OpenBSD: calmwm.h,v 1.142 2011/09/13 08:41:57 okan Exp $
+ * $OpenBSD: calmwm.h,v 1.143 2012/05/13 15:17:13 okan Exp $
  */
 
 #ifndef _CALMWM_H_
 #define _CALMWM_H_
 
+#include <X11/XKBlib.h>
 #include <X11/Xatom.h>
 #include <X11/Xft/Xft.h>
 #include <X11/Xlib.h>
