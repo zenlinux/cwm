@@ -16,7 +16,7 @@
  * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  *
- * $OpenBSD: menu.c,v 1.36 2012/08/07 14:05:49 okan Exp $
+ * $OpenBSD: menu.c,v 1.37 2012/10/23 15:32:38 okan Exp $
  */
 
 #include <sys/param.h>
@@ -358,10 +358,12 @@ menu_draw(struct screen_ctx *sc, struct menu_ctx *mc, struct menu_q *menuq,
 	xsave = mc->x;
 	ysave = mc->y;
 
-	if (mc->x < xmin)
-		mc->x = xmin;
-	else if (mc->x + mc->width >= xmax)
+	if (mc->x + mc->width >= xmax)
 		mc->x = xmax - mc->width;
+	if (mc->x < xmin) {
+		mc->x = xmin;
+		mc->width = xmax - xmin;
+	}
 
 	if (mc->y + dy >= ymax)
 		mc->y = ymax - dy;
