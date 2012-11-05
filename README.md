@@ -21,4 +21,6 @@ Building should be as simple as (please report any failure after having satisfie
 the library / package dependencies):
 
 	$ make
-	# INSTALLPATH=/usr/bin make install
+	...
+	$ sudo make PREFIX=/usr install
+	install -m 0755 cwm  /usr/bin/cwm

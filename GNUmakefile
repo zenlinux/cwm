@@ -13,7 +13,7 @@ CFLAGS	+= -g -Wall
 CPPFLAGS+= -I.
 LDFLAGS	+= 
 
-INSTALLPATH ?= /usr/bin
+PREFIX ?= /usr
 
 # No user serviceable parts below this line.
 CPPFLAGS+= $(shell pkg-config --silence-errors --cflags $(PKGS))
@@ -34,7 +34,7 @@ $(OBJS): %.o: %.c
 	$(CC) -c $(CFLAGS) $(CPPFLAGS) $<
 
 install:
-	install -m 0755 $(BIN) $(INSTALLPATH)/cwm
+	install -m 0755 $(BIN) $(PREFIX)/bin/cwm
 
 clean:
 	-rm -rf $(BIN) *.o *.core
