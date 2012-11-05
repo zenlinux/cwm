@@ -6,7 +6,6 @@ OBJS= cwm.o screen.o xmalloc.o client.o menu.o		\
       search.o util.o xutil.o conf.o xevents.o group.o	\
       kbfunc.o mousefunc.o font.o y.tab.o linux.o
 
-
 PKGS = x11 xcb xrender xft xau xdmcp xinerama xrandr xext freetype2 fontconfig
 
 CFLAGS	+= -g -Wall
@@ -35,7 +34,7 @@ $(OBJS): %.o: %.c
 
 install:
 	install -d $(PREFIX)/bin
-	install -m 0755 $(BIN) $(PREFIX)/bin/cwm
+	install -m 0755 $(BIN) $(PREFIX)/bin/$(BIN)
 
 clean:
 	-rm -rf $(BIN) *.o *.core
