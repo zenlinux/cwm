@@ -34,6 +34,7 @@ $(OBJS): %.o: %.c
 	$(CC) -c $(CFLAGS) $(CPPFLAGS) $<
 
 install:
+	install -d $(PREFIX)/bin
 	install -m 0755 $(BIN) $(PREFIX)/bin/cwm
 
 clean:
