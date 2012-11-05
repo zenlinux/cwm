@@ -471,7 +471,7 @@ group_update_names(struct screen_ctx *sc)
 	strings = xmalloc((nstrings < CALMWM_NGROUPS ? CALMWM_NGROUPS :
 	    nstrings) * sizeof(*strings));
 
-	p = prop_ret;
+	p = (char *)prop_ret;
 	while (n < nstrings) {
 		strings[n++] = xstrdup(p);
 		p += strlen(p) + 1;
@@ -501,9 +501,9 @@ group_update_names(struct screen_ctx *sc)
 static void
 group_set_names(struct screen_ctx *sc)
 {
-	unsigned char	*p, *q;
-	size_t		 len = 0, tlen, slen;
-	int		 i;
+	char	*p, *q;
+	size_t	 len = 0, tlen, slen;
+	int	 i;
 
 	for (i = 0; i < sc->group_nonames; i++)
 		len += strlen(sc->group_names[i]) + 1;
@@ -517,5 +517,5 @@ group_set_names(struct screen_ctx *sc)
 		q += slen;
 	}
 
-	xu_ewmh_net_desktop_names(sc, p, len);
+	xu_ewmh_net_desktop_names(sc, (unsigned char *)p, len);
 }
