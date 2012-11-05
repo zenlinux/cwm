@@ -1,3 +1,4 @@
 *.o
+y.tab.c
 cwm
 calmwm
