@@ -10,7 +10,7 @@ OBJS= cwm.o screen.o xmalloc.o client.o menu.o		\
 PKGS = x11 xcb xrender xft xau xdmcp xinerama xrandr xext freetype2 fontconfig
 
 CFLAGS	+= -g -Wall
-CPPFLAGS+= -I.
+CPPFLAGS+= -I. -D_GNU_SOURCE
 LDFLAGS	+= 
 
 PREFIX ?= /usr
