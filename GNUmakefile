@@ -18,10 +18,7 @@ PREFIX ?= /usr
 CPPFLAGS+= $(shell pkg-config --silence-errors --cflags $(PKGS))
 LDFLAGS	+= $(shell pkg-config --silence-errors --libs $(PKGS))
 
-all: obj $(BIN)
-
-obj:
-	mkdir -p obj
+all: $(BIN)
 
 y.tab.c: parse.y
 	yacc parse.y
