@@ -19,7 +19,6 @@
  */
 
 #include <sys/param.h>
-#include <sys/queue.h>
 
 #include <dirent.h>
 #include <err.h>

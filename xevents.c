@@ -25,7 +25,6 @@
  */
 
 #include <sys/param.h>
-#include <sys/queue.h>
 
 #include <err.h>
 #include <errno.h>
